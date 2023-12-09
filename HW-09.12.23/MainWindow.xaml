@@ -1,0 +1,39 @@
+﻿<Window x:Class="HW_09._12._23.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HW_09._12._23"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.4*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel HorizontalAlignment="Stretch" Margin="10">
+            <TextBlock Margin="5,0,5,5">Введіть пошуковий запит:</TextBlock>
+            <TextBox Margin="5,0,5,0" Name="SearchText"></TextBox>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <StackPanel>
+                    <RadioButton x:Name="GoogleRadioButton">Google</RadioButton>
+                    <RadioButton x:Name="BingRadioButton">Bing</RadioButton>
+                    <RadioButton x:Name="BothRadioButton">Google and Bing</RadioButton>
+                </StackPanel>
+                <Button Margin="15,5,5,5" Padding="5" HorizontalAlignment="Left" Click="SearchButton_Click">Пошук</Button>
+            </StackPanel>
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <WebBrowser x:Name="GoogleWebBrowser" Cursor="Arrow" Height="Auto">
+                
+            </WebBrowser>
+            <WebBrowser Grid.Column="1" x:Name="BingWebBrowser" Cursor="Arrow" Height="Auto">
+
+            </WebBrowser>
+        </Grid>
+    </Grid>
+</Window>
